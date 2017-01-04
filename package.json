@@ -1,7 +1,7 @@
 {
-  "name": "react-dnd-html5-backend",
+  "name": "react-dnd-html5-backend-without-conflicts",
   "version": "2.1.2",
-  "description": "HTML5 backend for React DnD",
+  "description": "HTML5 backend for React DnD without conflicts with other html5 drag & drop API",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-dnd-html5-backend.git"
+    "url": "https://github.com/tarobjtu/react-dnd-html5-backend"
   },
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Qi Tao (https://github.com/tarobjtu)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gaearon/react-dnd-html5-backend/issues"
+    "url": "https://github.com/tarobjtu/react-dnd-html5-backend/issues"
   },
   "homepage": "https://github.com/gaearon/react-dnd-html5-backend",
   "devDependencies": {

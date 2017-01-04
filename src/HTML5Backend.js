@@ -452,7 +452,7 @@ export default class HTML5Backend {
   }
 
   handleTopDragLeaveCapture(e) {
-    if(!this.__isReactDndDrag){
+    if (!this.__isReactDndDrag) {
       return;
     }
 
@@ -471,7 +471,7 @@ export default class HTML5Backend {
   }
 
   handleTopDropCapture(e) {
-    if(!this.__isReactDndDrag){
+    if (!this.__isReactDndDrag) {
       return;
     }
 
@@ -486,7 +486,7 @@ export default class HTML5Backend {
   }
 
   handleDrop(e, targetId) {
-    if(!this.__isReactDndDrag){
+    if (!this.__isReactDndDrag) {
       return;
     }
 
@@ -494,10 +494,9 @@ export default class HTML5Backend {
   }
 
   handleTopDrop(e) {
-    if(!this.__isReactDndDrag){
+    if (!this.__isReactDndDrag) {
       return;
     }
-    
     const { dropTargetIds } = this;
     this.dropTargetIds = [];
 
