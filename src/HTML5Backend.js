@@ -420,12 +420,11 @@ export default class HTML5Backend {
     this.dragOverTargetIds = [];
 
     if (!this.monitor.isDragging()) {
-      // This is probably a native item type we don't understand.
-      // Prevent default "drop and blow away the whole document" action.
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'none';
+      this.__isReactDndDrag = false;
       return;
     }
+
+    this.__isReactDndDrag = true;
 
     this.actions.hover(dragOverTargetIds, {
       clientOffset: getEventClientOffset(e)
@@ -453,6 +452,10 @@ export default class HTML5Backend {
   }
 
   handleTopDragLeaveCapture(e) {
+    if(!this.__isReactDndDrag){
+      return;
+    }
+
     if (this.isDraggingNativeItem()) {
       e.preventDefault();
     }
@@ -468,6 +471,10 @@ export default class HTML5Backend {
   }
 
   handleTopDropCapture(e) {
+    if(!this.__isReactDndDrag){
+      return;
+    }
+
     this.dropTargetIds = [];
     e.preventDefault();
 
@@ -479,10 +486,18 @@ export default class HTML5Backend {
   }
 
   handleDrop(e, targetId) {
+    if(!this.__isReactDndDrag){
+      return;
+    }
+
     this.dropTargetIds.unshift(targetId);
   }
 
   handleTopDrop(e) {
+    if(!this.__isReactDndDrag){
+      return;
+    }
+    
     const { dropTargetIds } = this;
     this.dropTargetIds = [];
 
